@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { supabase } from '../../services/supabase'
 
 function Login() {
@@ -6,6 +7,7 @@ function Login() {
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const navigate = useNavigate()
 
   async function handleLogin(e) {
     e.preventDefault()
@@ -23,7 +25,14 @@ function Login() {
       return
     }
 
-    console.log('Login ok:', data)
+    const tipo = data.user.user_metadata?.tipo
+
+    if (tipo === 'escola') navigate('/school/dashboard')
+    else if (tipo === 'reutilizador') navigate('/reuser/dashboard')
+    else if (tipo === 'coletor') navigate('/collector/dashboard')
+    else if (tipo === 'admin') navigate('/admin/dashboard')
+    else navigate('/school/dashboard')
+
     setLoading(false)
   }
 
@@ -77,7 +86,7 @@ function Login() {
         </form>
 
         <p className="text-center text-sm text-gray-500 mt-6">
-          Não tem conta?{' '}
+          Nao tem conta?{' '}
           <a href="/register" className="text-green-600 font-medium hover:underline">
             Cadastre-se
           </a>

@@ -26,12 +26,11 @@ function Register() {
       },
     })
 
-    if (error) {
-      setError('Erro ao criar conta. Tente novamente.')
-      setLoading(false)
-      return
-    }
-
+   if (error) {
+  setError(error.message)
+  setLoading(false)
+  return
+}
     setSuccess(true)
     setLoading(false)
   }
