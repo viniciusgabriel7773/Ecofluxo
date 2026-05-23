@@ -24,6 +24,29 @@ function ReuserDashboard() {
     fetchResiduos()
   }, [])
 
+  async function aceitarColeta(residuo) {
+    const { error } = await supabase.from('coletas').insert({
+      residuo_id: residuo.id,
+      escola_id: residuo.escola_id,
+      reutilizador_id: user.id,
+      status: 'aceita',
+      data_agendada: new Date().toISOString(),
+    })
+
+    if (error) {
+      alert(error.message)
+      return
+    }
+
+    await supabase
+      .from('residuos')
+      .update({ status: 'coletado' })
+      .eq('id', residuo.id)
+
+    setResiduos(residuos.filter((r) => r.id !== residuo.id))
+    alert('Coleta aceita com sucesso!')
+  }
+
   const tipoLabel = {
     sobra_merenda: 'Sobra de merenda',
     casca_fruta: 'Casca de fruta',
@@ -116,6 +139,12 @@ function ReuserDashboard() {
                     <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">
                       disponível
                     </span>
+                    <button
+                      onClick={() => aceitarColeta(residuo)}
+                      className="text-xs bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-lg transition-colors"
+                    >
+                      Aceitar coleta
+                    </button>
                   </div>
                 </div>
               ))}
