@@ -102,8 +102,11 @@ function SchoolDashboard() {
           <div className="bg-white rounded-2xl border border-gray-100 p-6">
             <h2 className="font-bold text-gray-800 mb-1">Agendar coleta</h2>
             <p className="text-sm text-gray-500 mb-4">Solicite uma coleta e conecte sua escola a um reutilizador.</p>
-            <button className="bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
-              Agendar coleta
+           <button
+            onClick={() => navigate('/school/agendar-coleta')}
+            className="bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+            >
+            Agendar coleta
             </button>
           </div>
         </div>

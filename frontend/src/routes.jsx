@@ -7,6 +7,7 @@ import ReuserDashboard from './pages/reuser/Dashboard'
 import AdminDashboard from './pages/admin/Dashboard'
 import CollectorDashboard from './pages/collector/Dashboard'
 import CadastrarResiduo from './pages/school/CadastrarResiduo'
+import AgendarColeta from './pages/school/AgendarColeta'
 
 function AppRoutes() {
   return (
@@ -20,6 +21,7 @@ function AppRoutes() {
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/collector/dashboard" element={<CollectorDashboard />} />
         <Route path="/school/cadastrar-residuo" element={<CadastrarResiduo />} />
+        <Route path="/school/agendar-coleta" element={<AgendarColeta />} />
       </Routes>
     </BrowserRouter>
   )
