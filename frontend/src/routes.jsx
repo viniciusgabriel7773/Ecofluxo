@@ -9,6 +9,7 @@ import CollectorDashboard from './pages/collector/Dashboard'
 import CadastrarResiduo from './pages/school/CadastrarResiduo'
 import AgendarColeta from './pages/school/AgendarColeta'
 import Mapa from './pages/school/Mapa'
+import Perfil from './pages/school/Perfil'
 
 function AppRoutes() {
   return (
@@ -24,6 +25,7 @@ function AppRoutes() {
         <Route path="/school/cadastrar-residuo" element={<CadastrarResiduo />} />
         <Route path="/school/agendar-coleta" element={<AgendarColeta />} />
         <Route path="/school/mapa" element={<Mapa />} />
+        <Route path="/school/perfil" element={<Perfil />} />
       </Routes>
     </BrowserRouter>
   )

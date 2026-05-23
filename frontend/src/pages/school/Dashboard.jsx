@@ -48,7 +48,12 @@ function SchoolDashboard() {
           <span className="font-bold text-green-800 text-lg">EcoFluxo</span>
         </div>
         <div className="flex items-center gap-4">
-          <span className="text-sm text-gray-500">{nome}</span>
+          <button
+            onClick={() => navigate('/school/perfil')}
+            className="text-sm text-gray-500 hover:text-green-600 transition-colors"
+          >
+            {nome}
+          </button>
           <button
             onClick={signOut}
             className="text-sm text-red-500 hover:text-red-600 font-medium transition-colors"
