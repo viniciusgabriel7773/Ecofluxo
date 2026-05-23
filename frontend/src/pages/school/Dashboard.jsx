@@ -88,7 +88,7 @@ function SchoolDashboard() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           <div className="bg-white rounded-2xl border border-gray-100 p-6">
             <h2 className="font-bold text-gray-800 mb-1">Cadastrar resíduo</h2>
             <p className="text-sm text-gray-500 mb-4">Registre sobras de merenda, cascas e outros resíduos orgânicos.</p>
@@ -102,11 +102,21 @@ function SchoolDashboard() {
           <div className="bg-white rounded-2xl border border-gray-100 p-6">
             <h2 className="font-bold text-gray-800 mb-1">Agendar coleta</h2>
             <p className="text-sm text-gray-500 mb-4">Solicite uma coleta e conecte sua escola a um reutilizador.</p>
-           <button
-            onClick={() => navigate('/school/agendar-coleta')}
-            className="bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+            <button
+              onClick={() => navigate('/school/agendar-coleta')}
+              className="bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
             >
-            Agendar coleta
+              Agendar coleta
+            </button>
+          </div>
+          <div className="bg-white rounded-2xl border border-gray-100 p-6">
+            <h2 className="font-bold text-gray-800 mb-1">Ver mapa</h2>
+            <p className="text-sm text-gray-500 mb-4">Visualize escolas e pontos de coleta na sua região.</p>
+            <button
+              onClick={() => navigate('/school/mapa')}
+              className="bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+            >
+              Abrir mapa
             </button>
           </div>
         </div>

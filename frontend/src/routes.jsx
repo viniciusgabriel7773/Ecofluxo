@@ -8,6 +8,7 @@ import AdminDashboard from './pages/admin/Dashboard'
 import CollectorDashboard from './pages/collector/Dashboard'
 import CadastrarResiduo from './pages/school/CadastrarResiduo'
 import AgendarColeta from './pages/school/AgendarColeta'
+import Mapa from './pages/school/Mapa'
 
 function AppRoutes() {
   return (
@@ -22,6 +23,7 @@ function AppRoutes() {
         <Route path="/collector/dashboard" element={<CollectorDashboard />} />
         <Route path="/school/cadastrar-residuo" element={<CadastrarResiduo />} />
         <Route path="/school/agendar-coleta" element={<AgendarColeta />} />
+        <Route path="/school/mapa" element={<Mapa />} />
       </Routes>
     </BrowserRouter>
   )
