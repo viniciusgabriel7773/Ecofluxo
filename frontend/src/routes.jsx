@@ -6,6 +6,7 @@ import SchoolDashboard from './pages/school/Dashboard'
 import ReuserDashboard from './pages/reuser/Dashboard'
 import AdminDashboard from './pages/admin/Dashboard'
 import CollectorDashboard from './pages/collector/Dashboard'
+import CadastrarResiduo from './pages/school/CadastrarResiduo'
 
 function AppRoutes() {
   return (
@@ -18,6 +19,7 @@ function AppRoutes() {
         <Route path="/reuser/dashboard" element={<ReuserDashboard />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/collector/dashboard" element={<CollectorDashboard />} />
+        <Route path="/school/cadastrar-residuo" element={<CadastrarResiduo />} />
       </Routes>
     </BrowserRouter>
   )

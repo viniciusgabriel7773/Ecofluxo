@@ -1,13 +1,14 @@
+import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 
 function SchoolDashboard() {
   const { user, signOut } = useAuth()
+  const navigate = useNavigate()
   const nome = user?.user_metadata?.nome || 'Escola'
 
   return (
     <div className="min-h-screen bg-gray-50">
 
-      {/* Header */}
       <header className="bg-white border-b border-gray-100 px-8 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
@@ -28,13 +29,11 @@ function SchoolDashboard() {
 
       <main className="px-8 py-8 max-w-6xl mx-auto">
 
-        {/* Boas vindas */}
         <div className="mb-8">
           <h1 className="text-2xl font-bold text-gray-800">Bem-vindo, {nome}!</h1>
           <p className="text-gray-500 mt-1">Acompanhe o impacto ambiental da sua instituição.</p>
         </div>
 
-        {/* Cards de métricas */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <div className="bg-white rounded-2xl border border-gray-100 p-6">
             <p className="text-sm text-gray-500 mb-1">Resíduos cadastrados</p>
@@ -58,12 +57,14 @@ function SchoolDashboard() {
           </div>
         </div>
 
-        {/* Ações rápidas */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           <div className="bg-white rounded-2xl border border-gray-100 p-6">
             <h2 className="font-bold text-gray-800 mb-1">Cadastrar resíduo</h2>
             <p className="text-sm text-gray-500 mb-4">Registre sobras de merenda, cascas e outros resíduos orgânicos.</p>
-            <button className="bg-green-500 hover:bg-green-600 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
+            <button
+              onClick={() => navigate('/school/cadastrar-residuo')}
+              className="bg-green-500 hover:bg-green-600 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+            >
               Cadastrar agora
             </button>
           </div>
@@ -76,7 +77,6 @@ function SchoolDashboard() {
           </div>
         </div>
 
-        {/* Histórico vazio */}
         <div className="bg-white rounded-2xl border border-gray-100 p-8 text-center">
           <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4">
             <span className="text-2xl">♻️</span>
