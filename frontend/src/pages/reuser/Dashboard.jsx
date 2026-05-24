@@ -84,7 +84,7 @@ function ReuserDashboard() {
           <p className="text-gray-500 mt-1">Veja os resíduos orgânicos disponíveis para coleta.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <div className="bg-white rounded-2xl border border-gray-100 p-6">
             <p className="text-sm text-gray-500 mb-1">Disponíveis agora</p>
             <p className="text-3xl font-bold text-blue-500">{residuos.length}</p>
@@ -146,7 +146,18 @@ function ReuserDashboard() {
                       Aceitar coleta
                     </button>
                   </div>
-                </div>
+
+                                    <div className="bg-white rounded-2xl border border-gray-100 p-6">
+                    <h2 className="font-bold text-gray-800 mb-1">Impacto ambiental</h2>
+                    <p className="text-sm text-gray-500 mb-4">Veja gráficos e métricas do seu impacto no meio ambiente.</p>
+                    <button
+                        onClick={() => navigate('/school/impacto')}
+                        className="bg-purple-500 hover:bg-purple-600 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+                    >
+                        Ver impacto
+                    </button>
+                    </div>
+                                    </div>
               ))}
             </div>
           )}
