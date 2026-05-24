@@ -11,12 +11,13 @@ import AgendarColeta from './pages/school/AgendarColeta'
 import Mapa from './pages/school/Mapa'
 import Perfil from './pages/school/Perfil'
 import Impacto from './pages/school/Impacto'
+import Landing from './pages/Landing'
 
 function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/" element={<Landing />} />  
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/school/dashboard" element={<SchoolDashboard />} />
