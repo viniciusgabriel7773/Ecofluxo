@@ -14,6 +14,7 @@ import Perfil from './pages/school/Perfil'
 import Impacto from './pages/school/Impacto'
 import Landing from './pages/Landing'
 import Educativo from './pages/school/Educativo'
+import NotFound from './pages/NotFound'
 
 function AppRoutes() {
   return (
@@ -32,6 +33,7 @@ function AppRoutes() {
         <Route path="/school/perfil" element={<Perfil />} />
         <Route path="/school/impacto" element={<Impacto />} />
         <Route path="/school/educativo" element={<Educativo />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   )
