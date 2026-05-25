@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../../services/supabase'
@@ -74,8 +75,9 @@ function Perfil() {
       return
     }
 
-    setSuccess(true)
-    setLoading(false)
+   toast.success('Perfil atualizado com sucesso!')
+setSuccess(true)
+setLoading(false)
   }
 
   async function usarLocalizacaoAtual() {

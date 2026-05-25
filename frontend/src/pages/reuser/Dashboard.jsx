@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
@@ -44,7 +45,7 @@ function ReuserDashboard() {
       .eq('id', residuo.id)
 
     setResiduos(residuos.filter((r) => r.id !== residuo.id))
-    alert('Coleta aceita com sucesso!')
+    toast.success('Coleta aceita com sucesso!')
   }
 
   const tipoLabel = {

@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../../services/supabase'
@@ -51,7 +52,8 @@ function AgendarColeta() {
       return
     }
 
-    navigate('/school/dashboard')
+   toast.success('Coleta agendada com sucesso!')
+navigate('/school/dashboard')
   }
 
   const tipoLabel = {

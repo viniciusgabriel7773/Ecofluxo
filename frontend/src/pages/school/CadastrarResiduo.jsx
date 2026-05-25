@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../../services/supabase'
@@ -41,7 +42,8 @@ function CadastrarResiduo() {
     return
         }
 
-    navigate('/school/dashboard')
+   toast.success('Resíduo cadastrado com sucesso!')
+navigate('/school/dashboard')
   }
 
   return (
