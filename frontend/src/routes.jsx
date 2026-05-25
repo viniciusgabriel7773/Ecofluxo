@@ -1,5 +1,6 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-
 import Login from './pages/auth/Login'
 import Register from './pages/auth/Register'
 import SchoolDashboard from './pages/school/Dashboard'
@@ -12,6 +13,7 @@ import Mapa from './pages/school/Mapa'
 import Perfil from './pages/school/Perfil'
 import Impacto from './pages/school/Impacto'
 import Landing from './pages/Landing'
+import Educativo from './pages/school/Educativo'
 
 function AppRoutes() {
   return (
@@ -29,6 +31,7 @@ function AppRoutes() {
         <Route path="/school/mapa" element={<Mapa />} />
         <Route path="/school/perfil" element={<Perfil />} />
         <Route path="/school/impacto" element={<Impacto />} />
+        <Route path="/school/educativo" element={<Educativo />} />
       </Routes>
     </BrowserRouter>
   )

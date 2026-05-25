@@ -93,7 +93,7 @@ function SchoolDashboard() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           <div className="bg-white rounded-2xl border border-gray-100 p-6">
             <h2 className="font-bold text-gray-800 mb-1">Cadastrar resíduo</h2>
             <p className="text-sm text-gray-500 mb-4">Registre sobras de merenda, cascas e outros resíduos orgânicos.</p>
@@ -132,6 +132,16 @@ function SchoolDashboard() {
               className="bg-purple-500 hover:bg-purple-600 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
             >
               Ver impacto
+            </button>
+          </div>
+          <div className="bg-white rounded-2xl border border-gray-100 p-6">
+            <h2 className="font-bold text-gray-800 mb-1">Conteúdo educativo</h2>
+            <p className="text-sm text-gray-500 mb-4">Aprenda sobre compostagem, sustentabilidade e economia circular.</p>
+            <button
+              onClick={() => navigate('/school/educativo')}
+              className="bg-amber-500 hover:bg-amber-600 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+            >
+              Ver conteúdo
             </button>
           </div>
         </div>
