@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../../services/supabase'
-import { useAuth } from '../../contexts/AuthContext'
 
 function Login() {
   const [email, setEmail] = useState('')
@@ -9,18 +8,6 @@ function Login() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const navigate = useNavigate()
-  const { user } = useAuth()
-
-  useEffect(() => {
-    if (user) {
-      const tipo = user.user_metadata?.tipo
-      if (tipo === 'escola') navigate('/school/dashboard')
-      else if (tipo === 'reutilizador') navigate('/reuser/dashboard')
-      else if (tipo === 'coletor') navigate('/collector/dashboard')
-      else if (tipo === 'admin') navigate('/admin/dashboard')
-      else navigate('/school/dashboard')
-    }
-  }, [user])
 
   async function handleLogin(e) {
     e.preventDefault()
@@ -32,10 +19,10 @@ function Login() {
       password,
     })
 
-    if (error) {
-      setError('Email ou senha incorretos.')
-      setLoading(false)
-      return
+  if (error) {
+  setError(error.message)
+  setLoading(false)
+  return
     }
 
     const tipo = data.user.user_metadata?.tipo
