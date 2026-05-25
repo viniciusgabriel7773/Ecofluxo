@@ -45,9 +45,12 @@ function AdminDashboard() {
         co2Evitado: (totalKg * 0.5).toFixed(1),
       })
 
-      setResiduos(residuosData || [])
-      setColetas(coletasData || [])
-      setLoading(false)
+            console.log('profiles:', profiles)
+        console.log('residuos:', residuosData)
+        console.log('coletas:', coletasData)
+        setResiduos(residuosData || [])
+        setColetas(coletasData || [])
+        setLoading(false)
     }
 
     fetchStats()
